@@ -1,0 +1,20 @@
+<ion-view title="Daftar Tugas" class="bubble-background">
+        <ion-nav-buttons side="right">
+          <a class="button icon ion-plus-circled button-{{::appTheme}}" href="#/app/tambahtugas"></a>
+        </ion-nav-buttons>  
+<ion-content padding="false" class="has-header">
+    <ion-refresher
+        pulling-text="Memperbaharui Daftar Tugas..."
+        on-refresh="showData()">
+    </ion-refresher>
+        <ion-list show-Reorder = "data.showReorder">
+            <ion-item class="item-icon-right" ng-repeat="datatugas in datatugass" type="item-text-wrap" href="#/app/detail/{{datatugas.id}}">
+                <i class="icon ion-chevron-right"></i>
+                <h2><b>{{datatugas.id}}. {{datatugas.matkul}}</b>
+                    <br> 
+                    <font size="2" color="gray" >Tanggal Deadline : {{datatugas.deadline}}</font>
+                </h2>
+            </ion-item>
+        </ion-list>
+</ion-content>
+</ion-view>
